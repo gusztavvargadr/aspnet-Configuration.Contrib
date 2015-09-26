@@ -3,6 +3,8 @@ environment:
   version_minor: 1
   version_revision: 0
 
+configuration: Release
+
 version: $(version_major).$(version_minor).$(version_revision).{build}
 
 assembly_info:
