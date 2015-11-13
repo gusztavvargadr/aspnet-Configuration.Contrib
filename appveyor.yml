@@ -5,6 +5,9 @@ environment:
 
 configuration: Release
 
+cache:
+  - packages -> **\packages.config
+
 version: $(version_major).$(version_minor).$(version_revision).{build}
 
 assembly_info:
