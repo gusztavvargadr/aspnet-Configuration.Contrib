@@ -1,0 +1,21 @@
+environment:
+  version_major: 0
+  version_minor: 1
+  version_revision: 0
+
+configuration: Release
+
+cache:
+  - packages -> **\packages.config
+
+version: $(version_major).$(version_minor).$(version_revision).{build}
+
+assembly_info:
+  patch: true
+  file: CommonAssemblyInfo.cs
+  assembly_version: '$(version_major).$(version_minor)'
+  assembly_file_version: '$(version_major).$(version_minor).$(version_revision).{build}'
+  assembly_informational_version: '$(version_major).$(version_minor).$(version_revision)-a{build}'
+
+before_build:
+  - nuget restore

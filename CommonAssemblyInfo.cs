@@ -3,9 +3,9 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Gusztáv Varga")]
 [assembly: AssemblyProduct("Microsoft.Framework.Configuration.Contrib.GV.AppSettings")]
-[assembly: AssemblyCopyright("Copyright © Gusztav Varga 2015")]
+[assembly: AssemblyCopyright("Copyright © Gusztáv Varga 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
