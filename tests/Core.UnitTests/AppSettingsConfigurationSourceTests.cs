@@ -6,8 +6,10 @@ namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 {
 	public class AppSettingsConfigurationSourceTests
 	{
-		[Fact]
-		public void LoadsKeyValuePairsFromAppSettings()
+		[Theory]
+		[InlineData("Key1", "Value1")]
+		[InlineData("Key2", "Value2")]
+		public void LoadsKeyValuePairsFromAppSettings(string key, string value)
 		{
 			var exeConfiguration = System.Configuration.ConfigurationManager.OpenExeConfiguration("GV.AspNet.Configuration.ConfigurationManager.Core.UnitTests.dll");
 
@@ -15,8 +17,8 @@ namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 			configurationBuilder.AddAppSettings(exeConfiguration.AppSettings);
 			var configuration = configurationBuilder.Build();
 
-			Assert.Equal("Value1", configuration["Key1"]);
-			Assert.Equal("Value2", configuration["Key2"]);
+			var configurationValue = configuration[key];
+			Assert.Equal(value, configurationValue);
 		}
 	}
 }
