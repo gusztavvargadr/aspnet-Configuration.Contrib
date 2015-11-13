@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Configuration;
+using Microsoft.Framework.Configuration;
 
-namespace Microsoft.Framework.Configuration.Contrib.GV.AppSettings
+namespace GV.AspNet.Configuration.ConfigurationManager
 {
 	public class AppSettingsConfigurationSource : ConfigurationSource
 	{

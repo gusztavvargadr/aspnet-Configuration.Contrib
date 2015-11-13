@@ -8,8 +8,8 @@
     <ProjectGuid>{E97EFCAE-4469-4AE5-A013-751F1E59225D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Framework.Configuration.Contrib.GV.AppSettings.UnitTests</RootNamespace>
-    <AssemblyName>Microsoft.Framework.Configuration.Contrib.GV.AppSettings.Core.UnitTests</AssemblyName>
+    <RootNamespace>GV.AspNet.Configuration.ConfigurationManager.UnitTests</RootNamespace>
+    <AssemblyName>GV.AspNet.Configuration.ConfigurationManager.Core.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Configuration;
+using Microsoft.Framework.Configuration;
 using Xunit;
 
-namespace Microsoft.Framework.Configuration.Contrib.GV.AppSettings.UnitTests
+namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 {
 	public class AppSettingsConfigurationSourceTests
 	{
 		[Fact]
 		public void LoadsKeyValuePairsFromAppSettings()
 		{
-			var exeConfiguration = ConfigurationManager.OpenExeConfiguration("Microsoft.Framework.Configuration.Contrib.GV.AppSettings.Core.UnitTests.dll");
+			var exeConfiguration = System.Configuration.ConfigurationManager.OpenExeConfiguration("GV.AspNet.Configuration.ConfigurationManager.Core.UnitTests.dll");
 
 			var configurationBuilder = new ConfigurationBuilder();
 			configurationBuilder.AddAppSettings(exeConfiguration.AppSettings);

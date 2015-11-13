@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Gusztáv Varga")]
-[assembly: AssemblyProduct("Microsoft.Framework.Configuration.Contrib.GV.AppSettings")]
+[assembly: AssemblyProduct("GV.AspNet.Configuration.ConfigurationManager")]
 [assembly: AssemblyCopyright("Copyright © Gusztáv Varga 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
