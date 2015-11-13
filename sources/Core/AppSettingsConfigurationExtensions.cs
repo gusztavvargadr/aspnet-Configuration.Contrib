@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Configuration;
-using Microsoft.Framework.Configuration.Contrib.GV.AppSettings;
+using GV.AspNet.Configuration.ConfigurationManager;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Framework.Configuration
