@@ -1,28 +1,28 @@
 ﻿using System;
-using System.Configuration;
+using System.Collections.Specialized;
 using Microsoft.Framework.Configuration;
 
 namespace GV.AspNet.Configuration.ConfigurationManager
 {
 	public class AppSettingsConfigurationSource : ConfigurationSource
 	{
-		public AppSettingsConfigurationSource(AppSettingsSection appSettingsSection, string keyDelimiter)
+		public AppSettingsConfigurationSource(NameValueCollection appSettings, string keyDelimiter, string keyPrefix)
 		{
-			if (appSettingsSection == null)
+			if (appSettings == null)
 			{
-				throw new ArgumentNullException(nameof(appSettingsSection));
+				throw new ArgumentNullException(nameof(appSettings));
 			}
 
-			AppSettingsSection = appSettingsSection;
+			AppSettings = appSettings;
 			KeyDelimiter = keyDelimiter;
 		}
 
-		private AppSettingsSection AppSettingsSection { get; }
+		private NameValueCollection AppSettings { get; }
 		private string KeyDelimiter { get; }
 
 		public override void Load()
 		{
-			foreach (var appSettingKey in AppSettingsSection.Settings.AllKeys)
+			foreach (var appSettingKey in AppSettings.AllKeys)
 			{
 				var key = GetKey(appSettingKey);
 				var value = GetValue(appSettingKey);
@@ -40,6 +40,6 @@ namespace GV.AspNet.Configuration.ConfigurationManager
 			return key.Trim();
 		}
 
-		private string GetValue(string appSettingsKey) => AppSettingsSection.Settings[appSettingsKey].Value;
+		private string GetValue(string appSettingsKey) => AppSettings[appSettingsKey];
 	}
 }
