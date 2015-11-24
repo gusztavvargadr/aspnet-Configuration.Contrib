@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.Framework.Configuration;
+using System.Collections.Specialized;
 using Xunit;
 
 namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
@@ -11,14 +11,14 @@ namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 		[InlineData("Key2", "Value2")]
 		public void LoadsKeyValuePairsFromAppSettings(string key, string value)
 		{
-			var exeConfiguration = System.Configuration.ConfigurationManager.OpenExeConfiguration("GV.AspNet.Configuration.ConfigurationManager.Core.UnitTests.dll");
+			var appSettings = new NameValueCollection { { key, value } };
+			var source = new AppSettingsConfigurationSource(appSettings, ":", string.Empty);
 
-			var configurationBuilder = new ConfigurationBuilder();
-			configurationBuilder.AddAppSettings(exeConfiguration.AppSettings);
-			var configuration = configurationBuilder.Build();
+			source.Load();
 
-			var configurationValue = configuration[key];
-			Assert.Equal(value, configurationValue);
+			string outValue;
+			Assert.True(source.TryGet(key, out outValue));
+			Assert.Equal(value, outValue);
 		}
 	}
 }
