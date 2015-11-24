@@ -6,6 +6,9 @@ cache:
 install:
   - choco install gitversion.portable -y
 
+nuget:
+  project_feed: true
+
 configuration: Release
 
 before_build:
