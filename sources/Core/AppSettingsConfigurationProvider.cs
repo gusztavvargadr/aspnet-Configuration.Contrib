@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Specialized;
-using Microsoft.Framework.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace GV.AspNet.Configuration.ConfigurationManager
 {
-	public class AppSettingsConfigurationSource : ConfigurationSource
+	public class AppSettingsConfigurationProvider : ConfigurationProvider
 	{
-		public AppSettingsConfigurationSource(NameValueCollection appSettings, string keyDelimiter, string keyPrefix)
+		public AppSettingsConfigurationProvider(NameValueCollection appSettings, string keyDelimiter, string keyPrefix)
 		{
 			if (appSettings == null)
 			{

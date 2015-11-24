@@ -4,7 +4,7 @@ using Xunit;
 
 namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 {
-	public class AppSettingsConfigurationSourceTests
+	public class AppSettingsConfigurationProviderTests
 	{
 		[Theory]
 		[InlineData("Key1", "Value1")]
@@ -12,7 +12,7 @@ namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 		public void LoadsKeyValuePairsFromAppSettings(string key, string value)
 		{
 			var appSettings = new NameValueCollection { { key, value } };
-			var source = new AppSettingsConfigurationSource(appSettings, ":", string.Empty);
+			var source = new AppSettingsConfigurationProvider(appSettings, ":", string.Empty);
 
 			source.Load();
 

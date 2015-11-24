@@ -4,8 +4,7 @@ using System.Configuration;
 using GV.AspNet.Configuration.ConfigurationManager;
 
 // ReSharper disable once CheckNamespace
-
-namespace Microsoft.Framework.Configuration
+namespace Microsoft.Extensions.Configuration
 {
 	public static class AppSettingsConfigurationExtensions
 	{
@@ -27,16 +26,14 @@ namespace Microsoft.Framework.Configuration
 				throw new ArgumentNullException(nameof(configurationBuilder));
 			}
 
-			return configurationBuilder.Add(new AppSettingsConfigurationSource(appSettings, keyDelimiter, keyPrefix));
+			return configurationBuilder.Add(new AppSettingsConfigurationProvider(appSettings, keyDelimiter, keyPrefix));
 		}
 
 		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder, System.Configuration.Configuration configuration)
 			=> configurationBuilder.AddAppSettings(configuration, DefaultKeyDelimiter);
 
 		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder, System.Configuration.Configuration configuration, string keyDelimiter)
-		{
-			return configurationBuilder.AddAppSettings(configuration, keyDelimiter, DefaultKeyPrefix);
-		}
+			=> configurationBuilder.AddAppSettings(configuration, keyDelimiter, DefaultKeyPrefix);
 
 		public static IConfigurationBuilder AddAppSettings(
 			this IConfigurationBuilder configurationBuilder,
