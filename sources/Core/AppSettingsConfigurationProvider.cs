@@ -6,6 +6,8 @@ namespace GV.AspNet.Configuration.ConfigurationManager
 {
 	public class AppSettingsConfigurationProvider : ConfigurationProvider
 	{
+		private static readonly string ConfigurationKeyPrefix = string.Concat("AppSettings", Constants.KeyDelimiter);
+
 		public AppSettingsConfigurationProvider(NameValueCollection appSettings, string keyDelimiter, string keyPrefix)
 		{
 			if (appSettings == null)
@@ -24,20 +26,21 @@ namespace GV.AspNet.Configuration.ConfigurationManager
 		{
 			foreach (var appSettingKey in AppSettings.AllKeys)
 			{
-				var key = GetKey(appSettingKey);
+				var configurationKey = GetConfigurationKey(appSettingKey);
 				var value = GetValue(appSettingKey);
-				Data[key] = value;
+				Data[configurationKey] = value;
 			}
 		}
 
-		private string GetKey(string appSettingsKey)
+		private string GetConfigurationKey(string appSettingsKey)
 		{
-			var key = appSettingsKey;
+			var configurationKey = appSettingsKey;
 			if (!string.IsNullOrEmpty(KeyDelimiter))
 			{
-				key = key.Replace(KeyDelimiter, Constants.KeyDelimiter);
+				configurationKey = configurationKey.Replace(KeyDelimiter, Constants.KeyDelimiter);
 			}
-			return key.Trim();
+			configurationKey = string.Concat(ConfigurationKeyPrefix, configurationKey.Trim());
+			return configurationKey;
 		}
 
 		private string GetValue(string appSettingsKey) => AppSettings[appSettingsKey];
