@@ -41,6 +41,11 @@ namespace Microsoft.Extensions.Configuration
 			string keyDelimiter,
 			string keyPrefix)
 		{
+			if (configuration == null)
+			{
+				throw new ArgumentNullException(nameof(configuration));
+			}
+
 			var appSettings = new NameValueCollection();
 			foreach (KeyValueConfigurationElement appSetting in configuration.AppSettings.Settings)
 			{
