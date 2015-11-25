@@ -8,38 +8,29 @@ namespace Microsoft.Extensions.Configuration
 {
 	public static class AppSettingsConfigurationExtensions
 	{
-		private static readonly string DefaultKeyDelimiter = Constants.KeyDelimiter;
-		private static readonly string DefaultKeyPrefix = string.Empty;
+		private static readonly string DefaultAppSettingsKeyDelimiter = string.Empty;
 
-		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder) => configurationBuilder.AddAppSettings(ConfigurationManager.AppSettings);
+		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder) => configurationBuilder.AddAppSettings(DefaultAppSettingsKeyDelimiter);
 
-		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder, NameValueCollection appSettings)
-			=> configurationBuilder.AddAppSettings(appSettings, DefaultKeyDelimiter);
+		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder, string appSettingsKeyDelimiter)
+			=> configurationBuilder.AddAppSettings(appSettingsKeyDelimiter, new string[] { });
 
-		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder, NameValueCollection appSettings, string keyDelimiter)
-			=> configurationBuilder.AddAppSettings(appSettings, keyDelimiter, DefaultKeyPrefix);
-
-		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder, NameValueCollection appSettings, string keyDelimiter, string keyPrefix)
-		{
-			if (configurationBuilder == null)
-			{
-				throw new ArgumentNullException(nameof(configurationBuilder));
-			}
-
-			return configurationBuilder.Add(new AppSettingsConfigurationProvider(appSettings, keyDelimiter, keyPrefix));
-		}
+		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder, string appSettingsKeyDelimiter, params string[] appSettingsSectionPrefixes)
+			=> configurationBuilder.AddAppSettings(ConfigurationManager.AppSettings, appSettingsKeyDelimiter, appSettingsSectionPrefixes);
 
 		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder, System.Configuration.Configuration configuration)
-			=> configurationBuilder.AddAppSettings(configuration, DefaultKeyDelimiter);
-
-		public static IConfigurationBuilder AddAppSettings(this IConfigurationBuilder configurationBuilder, System.Configuration.Configuration configuration, string keyDelimiter)
-			=> configurationBuilder.AddAppSettings(configuration, keyDelimiter, DefaultKeyPrefix);
+			=> configurationBuilder.AddAppSettings(configuration, DefaultAppSettingsKeyDelimiter);
 
 		public static IConfigurationBuilder AddAppSettings(
 			this IConfigurationBuilder configurationBuilder,
 			System.Configuration.Configuration configuration,
-			string keyDelimiter,
-			string keyPrefix)
+			string appSettingsKeyDelimiter) => configurationBuilder.AddAppSettings(configuration, appSettingsKeyDelimiter, new string[] { });
+
+		public static IConfigurationBuilder AddAppSettings(
+			this IConfigurationBuilder configurationBuilder,
+			System.Configuration.Configuration configuration,
+			string appSettingsKeyDelimiter,
+			params string[] appSettingsSectionPrefixes)
 		{
 			if (configuration == null)
 			{
@@ -51,7 +42,21 @@ namespace Microsoft.Extensions.Configuration
 			{
 				appSettings.Add(appSetting.Key, appSetting.Value);
 			}
-			return configurationBuilder.AddAppSettings(appSettings, keyDelimiter, keyPrefix);
+			return configurationBuilder.AddAppSettings(appSettings, appSettingsKeyDelimiter, appSettingsSectionPrefixes);
+		}
+
+		public static IConfigurationBuilder AddAppSettings(
+			this IConfigurationBuilder configurationBuilder,
+			NameValueCollection appSettings,
+			string appSettingsKeyDelimiter,
+			params string[] appSettingsSectionPrefixes)
+		{
+			if (configurationBuilder == null)
+			{
+				throw new ArgumentNullException(nameof(configurationBuilder));
+			}
+
+			return configurationBuilder.Add(new AppSettingsConfigurationProvider(appSettings, appSettingsKeyDelimiter, appSettingsSectionPrefixes));
 		}
 	}
 }
