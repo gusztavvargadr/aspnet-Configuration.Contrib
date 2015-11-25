@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Specialized;
-using Microsoft.Extensions.Configuration;
 using Xunit;
 
 namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
@@ -15,9 +14,8 @@ namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 			public void AddsAppSettings(string appSettingsKey, string configurationKey, string value)
 			{
 				var appSettings = new NameValueCollection { { appSettingsKey, value } };
-				var keyDelimiter = Constants.KeyDelimiter;
-				var keyPrefix = string.Empty;
-				var source = new AppSettingsConfigurationProvider(appSettings, keyDelimiter, keyPrefix);
+				var appSettingsKeyDelimiter = string.Empty;
+				var source = new AppSettingsConfigurationProvider(appSettings, appSettingsKeyDelimiter);
 
 				source.Load();
 
@@ -29,11 +27,24 @@ namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 			[Theory]
 			[InlineData("Parent.Key", "", "AppSettings:Parent.Key", "Value")]
 			[InlineData("Parent.Key", ".", "AppSettings:Parent:Key", "Value")]
-			public void ReplacesKeyDelimiter(string appSettingsKey, string keyDelimiter, string configurationKey, string value)
+			public void ReplacesKeyDelimiter(string appSettingsKey, string appSettingsKeyDelimiter, string configurationKey, string value)
 			{
 				var appSettings = new NameValueCollection { { appSettingsKey, value } };
-				var keyPrefix = string.Empty;
-				var source = new AppSettingsConfigurationProvider(appSettings, keyDelimiter, keyPrefix);
+				var source = new AppSettingsConfigurationProvider(appSettings, appSettingsKeyDelimiter);
+
+				source.Load();
+
+				string configurationValue;
+				Assert.True(source.TryGet(configurationKey, out configurationValue));
+				Assert.Equal(value, configurationValue);
+			}
+
+			[Theory]
+			[InlineData("ParentKey", "", "Parent", "AppSettings:Parent:Key", "Value")]
+			public void ReplacesSectionPrefix(string appSettingsKey, string appSettingsKeyDelimiter, string appSettingsSectionPrefix, string configurationKey, string value)
+			{
+				var appSettings = new NameValueCollection { { appSettingsKey, value } };
+				var source = new AppSettingsConfigurationProvider(appSettings, appSettingsKeyDelimiter, appSettingsSectionPrefix);
 
 				source.Load();
 

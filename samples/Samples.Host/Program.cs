@@ -16,6 +16,10 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 
 			var value1 = configuration["Key1"];
 			var value2 = configuration["Key2"];
+
+			var section1 = configuration.GetSection("Parent1");
+			var section2 = configuration.GetSection("Parent2");
+			var section3 = configuration.GetSection("Parent3");
 		}
 	}
 }
