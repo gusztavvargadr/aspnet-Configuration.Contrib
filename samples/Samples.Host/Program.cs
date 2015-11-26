@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using Microsoft.Extensions.Configuration;
 
 namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
@@ -7,19 +9,48 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 	{
 		private static void Main(string[] args)
 		{
+			PrintConfiguration(GetDefaultConfiguration());
+			PrintConfiguration(GetExeConfiguration());
+		}
+
+		private static IConfiguration GetDefaultConfiguration()
+		{
 			var configurationBuilder = new ConfigurationBuilder();
-			configurationBuilder.AddAppSettings();
-			//configurationBuilder.AddAppSettings(
-			//	System.Configuration.ConfigurationManager.OpenExeConfiguration(
-			//		Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GV.AspNet.Configuration.ConfigurationManager.Samples.Host.exe")));
+			configurationBuilder.AddAppSettings(".", "Parent3");
 			var configuration = configurationBuilder.Build();
+			return configuration;
+		}
 
-			var value1 = configuration["Key1"];
-			var value2 = configuration["Key2"];
+		private static IConfiguration GetExeConfiguration()
+		{
+			var configurationBuilder = new ConfigurationBuilder();
+			configurationBuilder.AddAppSettings(".", "Parent3");
+			configurationBuilder.AddAppSettings(
+				System.Configuration.ConfigurationManager.OpenExeConfiguration(
+					Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GV.AspNet.Configuration.ConfigurationManager.Samples.Host.exe")),
+				".",
+				"Parent3");
+			var configuration = configurationBuilder.Build();
+			return configuration;
+		}
 
-			var section1 = configuration.GetSection("Parent1");
-			var section2 = configuration.GetSection("Parent2");
-			var section3 = configuration.GetSection("Parent3");
+		private static void PrintConfiguration(IConfiguration configuration) => PrintConfigurationSections(configuration.GetChildren());
+
+		private static void PrintConfigurationSections(IEnumerable<IConfigurationSection> parents)
+		{
+			foreach (var parent in parents)
+			{
+				PrintConfigurationSection("root", parent);
+			}
+		}
+
+		private static void PrintConfigurationSection(string root, IConfigurationSection parent)
+		{
+			Console.WriteLine($"{root}:{parent.Key} - {parent.Value}");
+			foreach (var child in parent.GetChildren())
+			{
+				PrintConfigurationSection(string.Concat(root, Constants.KeyDelimiter, parent.Key), child);
+			}
 		}
 	}
 }
