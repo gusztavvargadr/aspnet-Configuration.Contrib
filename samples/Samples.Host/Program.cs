@@ -24,7 +24,6 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 		private static IConfiguration GetExeConfiguration()
 		{
 			var configurationBuilder = new ConfigurationBuilder();
-			configurationBuilder.AddAppSettings(".", "Parent3");
 			configurationBuilder.AddAppSettings(
 				System.Configuration.ConfigurationManager.OpenExeConfiguration(
 					Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GV.AspNet.Configuration.ConfigurationManager.Samples.Host.exe")),
@@ -34,7 +33,11 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 			return configuration;
 		}
 
-		private static void PrintConfiguration(IConfiguration configuration) => PrintConfigurationSections(configuration.GetChildren());
+		private static void PrintConfiguration(IConfiguration configuration)
+		{
+			PrintConfigurationSections(configuration.GetChildren());
+			PrintTypedSettings(configuration);
+		}
 
 		private static void PrintConfigurationSections(IEnumerable<IConfigurationSection> parents)
 		{
@@ -51,6 +54,12 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 			{
 				PrintConfigurationSection(string.Concat(root, Constants.KeyDelimiter, parent.Key), child);
 			}
+		}
+
+		private static void PrintTypedSettings(IConfiguration configuration)
+		{
+			var appSettings = configuration.Get<AppSettings>("AppSettings");
+			Console.WriteLine(appSettings);
 		}
 	}
 }
