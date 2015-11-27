@@ -2,6 +2,8 @@
 
 **Contents** [Overview][Overview] | [Getting started][GettingStarted] | [Usage][Usage] | [Resources][Resources]
 
+![Build][BuildBadge] ![NuGet][NuGetBadge]
+
 This repository contains [System.Configuration.ConfigurationManager][SystemConfigurationConfigurationManager] compatibility configuration providers for [aspnet][aspnet]/[Configuration][Configuration].
 
 ## Overview
@@ -111,6 +113,8 @@ See the [samples][Samples] project for a complete example of all the various opt
 [GettingStarted]: #getting-started
 [Usage]: #usage
 [Resources]: #resources
+[BuildBadge]: https://img.shields.io/appveyor/ci/gusztavvargadr/aspnet-configuration-configurationmanager.svg
+[NuGetBadge]: https://img.shields.io/nuget/v/Microsoft.Extensions.Configuration.Contrib.GV.ConfigurationManager.svg
 [SystemConfigurationConfigurationManager]: https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager(v=vs.110).aspx
 [aspnet]: https://github.com/aspnet
 [Configuration]: https://github.com/aspnet/Configuration
