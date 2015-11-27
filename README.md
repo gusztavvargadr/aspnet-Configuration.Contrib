@@ -2,7 +2,7 @@
 
 **Contents** [Overview][Overview] | [Getting started][GettingStarted] | [Usage][Usage] | [Resources][Resources]
 
-![Build][BuildBadge] ![NuGet][NuGetBadge]
+[![Build][BuildBadge]][Build] [![NuGet][NuGetBadge]][NuGet]
 
 This repository contains [System.Configuration.ConfigurationManager][SystemConfigurationConfigurationManager] compatibility configuration providers for [aspnet][aspnet]/[Configuration][Configuration].
 
@@ -114,11 +114,12 @@ See the [samples][Samples] project for a complete example of all the various opt
 [Usage]: #usage
 [Resources]: #resources
 [BuildBadge]: https://img.shields.io/appveyor/ci/gusztavvargadr/aspnet-configuration-configurationmanager.svg
+[Build]: https://ci.appveyor.com/project/gusztavvargadr/aspnet-configuration-configurationmanager
 [NuGetBadge]: https://img.shields.io/nuget/v/Microsoft.Extensions.Configuration.Contrib.GV.ConfigurationManager.svg
+[NuGet]: https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Contrib.GV.ConfigurationManager
 [SystemConfigurationConfigurationManager]: https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager(v=vs.110).aspx
 [aspnet]: https://github.com/aspnet
 [Configuration]: https://github.com/aspnet/Configuration
-[NuGet]: https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Contrib.GV.ConfigurationManager
 [ConfigurationBinder]: https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder
 [Samples]: samples/Samples.Host
 [Documentation]: https://docs.asp.net/en/latest/fundamentals/configuration.html
