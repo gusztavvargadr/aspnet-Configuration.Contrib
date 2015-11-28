@@ -12,7 +12,7 @@ In case you like the direction of the new [ASP.NET configuration][Documentation]
 
 ## Getting started
 
-Just reference the [NuGet package][NuGet] in your project, which works with the configuration values, to get started.
+Just reference the [NuGet package][NuGet] in your project, which works with the configuration values, to get started. This will add the dependencies to the required core [Configuration][Configuration] packages too.
 
 ## Usage
 
@@ -105,9 +105,7 @@ See the [samples][Samples] project for a complete example of all the various opt
 ## Resources
 
 * [Samples][Samples]
-* [Documentation][Documentation]
-* [Packages][Packages]
-* [Sources][Configuration]
+* [Official Documentation][Documentation]
 
 [Overview]: #overview
 [GettingStarted]: #getting-started
@@ -123,4 +121,3 @@ See the [samples][Samples] project for a complete example of all the various opt
 [ConfigurationBinder]: https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder
 [Samples]: samples/Samples.Host
 [Documentation]: https://docs.asp.net/en/latest/fundamentals/configuration.html
-[Packages]: https://www.nuget.org/packages?q=Microsoft.Extensions.Configuration
