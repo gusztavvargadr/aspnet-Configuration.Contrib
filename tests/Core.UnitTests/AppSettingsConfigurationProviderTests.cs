@@ -15,12 +15,12 @@ namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 			{
 				var appSettings = new NameValueCollection { { appSettingsKey, value } };
 				var appSettingsKeyDelimiter = string.Empty;
-				var source = new AppSettingsConfigurationProvider(appSettings, appSettingsKeyDelimiter);
+				var provider = new AppSettingsConfigurationProvider(appSettings, appSettingsKeyDelimiter);
 
-				source.Load();
+				provider.Load();
 
 				string configurationValue;
-				Assert.True(source.TryGet(configurationKey, out configurationValue));
+				Assert.True(provider.TryGet(configurationKey, out configurationValue));
 				Assert.Equal(value, configurationValue);
 			}
 
@@ -30,12 +30,12 @@ namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 			public void ReplacesKeyDelimiter(string appSettingsKey, string appSettingsKeyDelimiter, string configurationKey, string value)
 			{
 				var appSettings = new NameValueCollection { { appSettingsKey, value } };
-				var source = new AppSettingsConfigurationProvider(appSettings, appSettingsKeyDelimiter);
+				var provider = new AppSettingsConfigurationProvider(appSettings, appSettingsKeyDelimiter);
 
-				source.Load();
+				provider.Load();
 
 				string configurationValue;
-				Assert.True(source.TryGet(configurationKey, out configurationValue));
+				Assert.True(provider.TryGet(configurationKey, out configurationValue));
 				Assert.Equal(value, configurationValue);
 			}
 
@@ -44,12 +44,12 @@ namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
 			public void ReplacesSectionPrefix(string appSettingsKey, string appSettingsKeyDelimiter, string appSettingsSectionPrefix, string configurationKey, string value)
 			{
 				var appSettings = new NameValueCollection { { appSettingsKey, value } };
-				var source = new AppSettingsConfigurationProvider(appSettings, appSettingsKeyDelimiter, appSettingsSectionPrefix);
+				var provider = new AppSettingsConfigurationProvider(appSettings, appSettingsKeyDelimiter, appSettingsSectionPrefix);
 
-				source.Load();
+				provider.Load();
 
 				string configurationValue;
-				Assert.True(source.TryGet(configurationKey, out configurationValue));
+				Assert.True(provider.TryGet(configurationKey, out configurationValue));
 				Assert.Equal(value, configurationValue);
 			}
 		}
