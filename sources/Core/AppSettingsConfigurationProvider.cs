@@ -7,8 +7,8 @@ namespace GV.AspNet.Configuration.ConfigurationManager
 {
 	public class AppSettingsConfigurationProvider : ConfigurationProvider
 	{
+		private const string ConfigurationKeyPrefix = "AppSettings";
 		private static readonly string ConfigurationKeyDelimiter = Constants.KeyDelimiter;
-		private static readonly string ConfigurationKeyPrefix = string.Concat("AppSettings", ConfigurationKeyDelimiter);
 
 		public AppSettingsConfigurationProvider(NameValueCollection appSettings, string appSettingsKeyDelimiter, params string[] appSettingsSectionPrefixes)
 		{
@@ -56,7 +56,7 @@ namespace GV.AspNet.Configuration.ConfigurationManager
 				break;
 			}
 
-			configurationKey = string.Concat(ConfigurationKeyPrefix, configurationKey.Trim());
+			configurationKey = string.Concat(ConfigurationKeyPrefix, ConfigurationKeyDelimiter, configurationKey.Trim());
 			return configurationKey;
 		}
 

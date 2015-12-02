@@ -17,6 +17,7 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 		{
 			var configurationBuilder = new ConfigurationBuilder();
 			configurationBuilder.AddAppSettings(".", "Parent3");
+			configurationBuilder.AddConnectionStrings();
 			var configuration = configurationBuilder.Build();
 			return configuration;
 		}
@@ -24,11 +25,11 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 		private static IConfiguration GetExeConfiguration()
 		{
 			var configurationBuilder = new ConfigurationBuilder();
-			configurationBuilder.AddAppSettings(
+			var exeConfiguration =
 				System.Configuration.ConfigurationManager.OpenExeConfiguration(
-					Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GV.AspNet.Configuration.ConfigurationManager.Samples.Host.exe")),
-				".",
-				"Parent3");
+					Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GV.AspNet.Configuration.ConfigurationManager.Samples.Host.exe"));
+			configurationBuilder.AddAppSettings(exeConfiguration, ".", "Parent3");
+			configurationBuilder.AddConnectionStrings(exeConfiguration);
 			var configuration = configurationBuilder.Build();
 			return configuration;
 		}
@@ -37,6 +38,7 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 		{
 			PrintConfigurationSections(configuration.GetChildren());
 			PrintTypedSettings(configuration);
+			PrintConnectionStrings(configuration);
 		}
 
 		private static void PrintConfigurationSections(IEnumerable<IConfigurationSection> parents)
@@ -60,6 +62,13 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 		{
 			var appSettings = configuration.Get<AppSettings>("AppSettings");
 			Console.WriteLine(appSettings);
+		}
+
+		private static void PrintConnectionStrings(IConfiguration configuration)
+		{
+			var connectionString = configuration["Data:DefaultConnection:ConnectionString"];
+			var providerName = configuration["Data:DefaultConnection:ProviderName"];
+			Console.WriteLine($"{connectionString} - {providerName}");
 		}
 	}
 }

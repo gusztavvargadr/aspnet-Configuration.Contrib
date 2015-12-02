@@ -3,7 +3,6 @@ using System.Configuration;
 using GV.AspNet.Configuration.ConfigurationManager;
 
 // ReSharper disable once CheckNamespace
-
 namespace Microsoft.Extensions.Configuration
 {
 	public static class ConnectionStringsConfigurationExtensions
