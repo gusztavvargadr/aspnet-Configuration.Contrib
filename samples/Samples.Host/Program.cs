@@ -66,8 +66,14 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 
 		private static void PrintConnectionStrings(IConfiguration configuration)
 		{
-			var connectionString = configuration["Data:DefaultConnection:ConnectionString"];
-			var providerName = configuration["Data:DefaultConnection:ProviderName"];
+			PrintConnectionString(configuration, "DefaultConnection");
+			PrintConnectionString(configuration, "OtherConnection");
+		}
+
+		private static void PrintConnectionString(IConfiguration configuration, string name)
+		{
+			var connectionString = configuration[$"Data:{name}:ConnectionString"];
+			var providerName = configuration[$"Data:{name}:ProviderName"];
 			Console.WriteLine($"{connectionString} - {providerName}");
 		}
 	}

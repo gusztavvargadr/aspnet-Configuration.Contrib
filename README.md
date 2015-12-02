@@ -86,6 +86,29 @@ You can specify the custom separators and prefixes to use when loading the value
 configurationBuilder.AddAppSettings(".", "Connection");
 ```
 
+You can now add your existing connection strings too:
+
+```csharp
+var configurationBuilder = new ConfigurationBuilder();
+configurationBuilder.AddConnectionStrings();
+var configuration = configurationBuilder.Build();
+```
+
+Having the usual setup like:
+
+```xml
+<connectionStrings>
+  <add name="DefaultConnection" connectionString="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf;User Instance=true" providerName="System.Data.SqlClient" />
+</connectionStrings>
+```
+
+Reading the connection information is simply:
+
+```csharp
+var connectionString = configuration["Data:DefaultConnection:ConnectionString"];
+var providerName = configuration["Data:DefaultConnection:ProviderName"];
+```
+
 Besides the default application configuration, you can load your settings from any custom file too:
 
 ```csharp
@@ -96,7 +119,7 @@ configurationBuilder.AddAppSettings(
 var configuration = configurationBuilder.Build();
 ```
 
-This version, of course, also supports the custom key delimiters and prefixes.
+This version, of course, also supports the custom key delimiters and prefixes for application settings and the connection strings setup, too.
 
 If you like the capabilities of the new configuration subsystem, don't forget to actually migrate your settings to the new, more flexible providers, supporting, for example, working with JSON or loading multiple layers of configuration providers. These libraries are intended to be used only as the very first step of that process.
 
