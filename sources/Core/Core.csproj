@@ -59,6 +59,8 @@
     </Compile>
     <Compile Include="AppSettingsConfigurationExtensions.cs" />
     <Compile Include="AppSettingsConfigurationProvider.cs" />
+    <Compile Include="ConnectionStringsConfigurationExtensions.cs" />
+    <Compile Include="ConnectionStringsConfigurationProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
