@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
-<package >
-  <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <releaseNotes>First release</releaseNotes>
-    <copyright>Copyright 2015</copyright>
-    <tags>none</tags>
-  </metadata>
+<package>
+	<metadata>
+		<id>Microsoft.Extensions.Configuration.Contrib.GV.ConfigurationManager</id>
+		<version>$version$</version>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<licenseUrl>https://github.com/gusztavvargadr/aspnet-Configuration.ConfigurationManager/blob/develop/LICENSE.md</licenseUrl>
+		<copyright>Copyright © Gusztáv Varga 2015</copyright>
+		<projectUrl>https://github.com/gusztavvargadr/aspnet-Configuration.ConfigurationManager</projectUrl>
+	</metadata>
 </package>
