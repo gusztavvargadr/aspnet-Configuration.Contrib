@@ -2,7 +2,7 @@
 using System.Collections.Specialized;
 using Xunit;
 
-namespace GV.AspNet.Configuration.ConfigurationManager.UnitTests
+namespace GV.AspNet.Configuration.Contrib.ConfigurationManager.UnitTests
 {
 	public class AppSettingsConfigurationProviderTests
 	{

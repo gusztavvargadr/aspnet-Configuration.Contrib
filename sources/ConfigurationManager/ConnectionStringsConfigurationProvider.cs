@@ -2,7 +2,7 @@
 using System.Configuration;
 using Microsoft.Extensions.Configuration;
 
-namespace GV.AspNet.Configuration.ConfigurationManager
+namespace GV.AspNet.Configuration.Contrib.ConfigurationManager
 {
 	public class ConnectionStringsConfigurationProvider : ConfigurationProvider
 	{

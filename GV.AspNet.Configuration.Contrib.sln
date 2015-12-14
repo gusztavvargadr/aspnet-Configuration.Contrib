@@ -18,13 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sources", "sources", "{9BC9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7E020365-57A4-4E33-B314-DE4D3D7C026A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "sources\Core\Core.csproj", "{3859914E-2549-4E08-8CCE-0DC0961A8DB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationManager", "sources\ConfigurationManager\ConfigurationManager.csproj", "{3859914E-2549-4E08-8CCE-0DC0961A8DB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.UnitTests", "tests\Core.UnitTests\Core.UnitTests.csproj", "{E97EFCAE-4469-4AE5-A013-751F1E59225D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationManager.UnitTests", "tests\ConfigurationManager.UnitTests\ConfigurationManager.UnitTests.csproj", "{E97EFCAE-4469-4AE5-A013-751F1E59225D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{697EB1CB-66A5-4714-86F6-D214E1D2C6FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.Host", "samples\Samples.Host\Samples.Host.csproj", "{69534E8E-5B08-4507-AE4E-7EE45F8FE668}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationManager.Samples.Host", "samples\ConfigurationManager.Samples.Host\ConfigurationManager.Samples.Host.csproj", "{69534E8E-5B08-4507-AE4E-7EE45F8FE668}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

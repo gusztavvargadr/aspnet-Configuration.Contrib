@@ -1,14 +1,14 @@
-# aspnet-Configuration.ConfigurationManager
+# aspnet-Configuration.Contrib
 
 **Contents** [Overview][Overview] | [Getting started][GettingStarted] | [Usage][Usage] | [Resources][Resources]
 
 [![Build][BuildBadge]][Build] [![NuGet][NuGetBadge]][NuGet]
 
-This repository contains [System.Configuration.ConfigurationManager][SystemConfigurationConfigurationManager] compatibility configuration providers for [aspnet][aspnet]/[Configuration][Configuration].
+This repository contains [System.Configuration.ConfigurationManager][SystemConfigurationConfigurationManager] compatibility providers for the [ASP.NET 5][aspnet] [configuration system][Configuration].
 
 ## Overview
 
-In case you like the direction of the new [ASP.NET configuration][Documentation] subsystem, and you want to try it for .NET 4.5(.1) too, but first without touching your existing configuration files, these components might be of help. Independently of how weird it is to lock an advanced abstraction to its legacy roots, by using these providers you can easily reuse your current `app.config` or `Web.config` files to wire up the application settings and connection strings in the new system.
+In case you like the direction of the new [ASP.NET 5][aspnet] [configuration system][Configuration], and you want to try it for .NET 4.5(.1) too, but first without touching your existing configuration files, these components might be of help. Independently of how weird it is to lock an advanced abstraction to its legacy roots, by using these providers you can easily reuse your current `app.config` or `Web.config` files to wire up the application settings and connection strings in the new system.
 
 ## Getting started
 

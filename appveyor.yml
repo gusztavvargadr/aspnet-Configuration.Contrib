@@ -16,7 +16,7 @@ before_build:
   - ps: gitversion /l console /output buildserver /updateassemblyinfo CommonAssemblyInfo.cs /b (get-item env:APPVEYOR_REPO_BRANCH).Value
 
 after_build:
-  - nuget pack Sources/Core/Core.csproj
+  - nuget pack sources/ConfigurationManager/ConfigurationManager.csproj
 
 artifacts:
   - path: '*.nupkg'

@@ -6,7 +6,7 @@ branches:
   releases?[/-]:
     tag: rc
   features?[/-]:
-    tag: useBranchName
+    tag: a
     increment: Minor
   (pull|pull\-requests|pr)[/-]:
     tag: pr
