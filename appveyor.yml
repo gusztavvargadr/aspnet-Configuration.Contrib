@@ -17,6 +17,7 @@ before_build:
 
 after_build:
   - nuget pack sources/ConfigurationManager/ConfigurationManager.csproj
+  - nuget pack sources/Octopus/Octopus.csproj
 
 artifacts:
   - path: '*.nupkg'
