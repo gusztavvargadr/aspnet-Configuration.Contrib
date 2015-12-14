@@ -10,7 +10,7 @@ Please see the [Wiki] for more information.
 [CIBadge]: https://img.shields.io/appveyor/ci/gusztavvargadr/aspnet-configuration-contrib.svg
 [NuGetPackage]: https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Contrib.GV.ConfigurationManager
 [NuGetBadge]: https://img.shields.io/nuget/v/Microsoft.Extensions.Configuration.Contrib.GV.ConfigurationManager.svg
-[Wiki]: [../../wiki]
+[Wiki]: ../../wiki
 [AspNet5]: https://docs.asp.net/en/latest/
 [AspNet5Configuration]: https://docs.asp.net/en/latest/fundamentals/configuration.html
 [Octopus]: https://octopus.com/
