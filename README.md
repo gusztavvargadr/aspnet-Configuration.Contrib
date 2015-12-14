@@ -4,7 +4,9 @@
 
 [![Build][BuildBadge]][Build] [![NuGet][NuGetBadge]][NuGet]
 
-This repository contains [System.Configuration.ConfigurationManager][SystemConfigurationConfigurationManager] compatibility providers for the [ASP.NET 5][aspnet] [configuration system][Configuration].
+This repository contains additional providers for the [ASP.NET 5][aspnet] [configuration system][Configuration].
+
+[System.Configuration.ConfigurationManager][SystemConfigurationConfigurationManager]
 
 ## Overview
 
@@ -134,8 +136,8 @@ See the [samples][Samples] project for a complete example of all the various opt
 [GettingStarted]: #getting-started
 [Usage]: #usage
 [Resources]: #resources
-[BuildBadge]: https://img.shields.io/appveyor/ci/gusztavvargadr/aspnet-configuration-configurationmanager.svg
-[Build]: https://ci.appveyor.com/project/gusztavvargadr/aspnet-configuration-configurationmanager
+[BuildBadge]: https://img.shields.io/appveyor/ci/gusztavvargadr/aspnet-configuration-contrib.svg
+[Build]: https://ci.appveyor.com/project/gusztavvargadr/aspnet-configuration-contrib
 [NuGetBadge]: https://img.shields.io/nuget/v/Microsoft.Extensions.Configuration.Contrib.GV.ConfigurationManager.svg
 [NuGet]: https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Contrib.GV.ConfigurationManager
 [SystemConfigurationConfigurationManager]: https://msdn.microsoft.com/en-us/library/system.configuration.configurationmanager(v=vs.110).aspx
