@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using Microsoft.Extensions.Configuration;
 
-namespace GV.AspNet.Configuration.ConfigurationManager
+namespace GV.AspNet.Configuration.Contrib.ConfigurationManager
 {
 	public class AppSettingsConfigurationProvider : ConfigurationProvider
 	{

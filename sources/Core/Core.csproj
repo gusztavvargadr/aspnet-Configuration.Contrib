@@ -7,8 +7,8 @@
     <ProjectGuid>{3859914E-2549-4E08-8CCE-0DC0961A8DB3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GV.AspNet.Configuration.ConfigurationManager</RootNamespace>
-    <AssemblyName>GV.AspNet.Configuration.ConfigurationManager.Core</AssemblyName>
+    <RootNamespace>GV.AspNet.Configuration.Contrib.ConfigurationManager</RootNamespace>
+    <AssemblyName>GV.AspNet.Configuration.Contrib.ConfigurationManager</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

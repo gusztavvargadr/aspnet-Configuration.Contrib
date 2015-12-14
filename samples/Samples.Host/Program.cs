@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 
-namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
+namespace GV.AspNet.Configuration.Contrib.ConfigurationManager.Samples.Host
 {
 	internal class Program
 	{
@@ -27,7 +27,7 @@ namespace GV.AspNet.Configuration.ConfigurationManager.Samples.Host
 			var configurationBuilder = new ConfigurationBuilder();
 			var exeConfiguration =
 				System.Configuration.ConfigurationManager.OpenExeConfiguration(
-					Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GV.AspNet.Configuration.ConfigurationManager.Samples.Host.exe"));
+					Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GV.AspNet.Configuration.Contrib.ConfigurationManager.Samples.Host.exe"));
 			configurationBuilder.AddAppSettings(exeConfiguration, ".", "Parent3");
 			configurationBuilder.AddConnectionStrings(exeConfiguration);
 			var configuration = configurationBuilder.Build();

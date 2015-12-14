@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.Configuration;
-using GV.AspNet.Configuration.ConfigurationManager;
+using GV.AspNet.Configuration.Contrib.ConfigurationManager;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.Configuration
