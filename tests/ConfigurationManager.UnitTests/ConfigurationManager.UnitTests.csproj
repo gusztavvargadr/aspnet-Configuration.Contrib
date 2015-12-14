@@ -80,16 +80,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\sources\Core\Core.csproj">
+    <ProjectReference Include="..\..\sources\ConfigurationManager\ConfigurationManager.csproj">
       <Project>{3859914e-2549-4e08-8cce-0dc0961a8db3}</Project>
-      <Name>Core</Name>
+      <Name>ConfigurationManager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
