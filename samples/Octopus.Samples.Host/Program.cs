@@ -13,7 +13,7 @@ namespace GV.AspNet.Configuration.Contrib.Octopus.Samples.Host
 			var configurationBuilder = new ConfigurationBuilder();
 
 			var octopusOptions = GetOctopusOptions();
-			configurationBuilder.AddOctopus(octopusOptions);
+			configurationBuilder.AddOctopus(octopusOptions, ".", "AWS", "Database", "Octopus");
 
 			var configuration = configurationBuilder.Build();
 			return configuration;
@@ -30,7 +30,11 @@ namespace GV.AspNet.Configuration.Contrib.Octopus.Samples.Host
 			return octopusOptions;
 		}
 
-		private static void PrintConfiguration(IConfiguration configuration) => PrintConfigurationSections(configuration.GetChildren());
+		private static void PrintConfiguration(IConfiguration configuration)
+		{
+			PrintConfigurationSections(configuration.GetChildren());
+			PrintTypedSettings(configuration);
+		}
 
 		private static void PrintConfigurationSections(IEnumerable<IConfigurationSection> parents)
 		{
@@ -47,6 +51,12 @@ namespace GV.AspNet.Configuration.Contrib.Octopus.Samples.Host
 			{
 				PrintConfigurationSection(string.Concat(root, Constants.KeyDelimiter, parent.Key), child);
 			}
+		}
+
+		private static void PrintTypedSettings(IConfiguration configuration)
+		{
+			var appSettings = configuration.Get<AppSettings>("AppSettings");
+			Console.WriteLine(appSettings);
 		}
 	}
 }
