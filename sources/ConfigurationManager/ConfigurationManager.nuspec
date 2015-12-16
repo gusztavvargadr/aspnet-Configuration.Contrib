@@ -10,6 +10,6 @@
 		<licenseUrl>https://github.com/gusztavvargadr/aspnet-Configuration.Contrib/blob/develop/LICENSE.md</licenseUrl>
 		<copyright>Copyright © Gusztáv Varga 2015</copyright>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<tags>ASP.NET Configuration Microsoft.Extensions.Configuration</tags>
+		<tags>ASP.NET Configuration Microsoft.Extensions.Configuration app.config Web.config</tags>
 	</metadata>
 </package>
