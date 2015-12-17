@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<description>$description$</description>
+		<projectUrl>https://github.com/gusztavvargadr/aspnet-Configuration.Contrib</projectUrl>
+		<licenseUrl>https://github.com/gusztavvargadr/aspnet-Configuration.Contrib/blob/develop/LICENSE.md</licenseUrl>
+		<copyright>Copyright © Gusztáv Varga 2015</copyright>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<tags>ASP.NET Configuration Microsoft.Extensions.Configuration Web.config app.config</tags>
+	</metadata>
+</package>
