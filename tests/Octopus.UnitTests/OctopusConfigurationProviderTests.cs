@@ -23,8 +23,8 @@ namespace GV.AspNet.Configuration.Contrib.Octopus.UnitTests
 		public class Load : OctopusConfigurationProviderTests
 		{
 			[Theory]
-			[InlineData("", "AppSettings:", "Value")]
-			[InlineData("Key", "AppSettings:Key", "Value")]
+			[InlineData("", "", "Value")]
+			[InlineData("Key", "Key", "Value")]
 			public void AddsVariables(string appSettingsKey, string configurationKey, string value)
 			{
 				VariableDictionary.Set(appSettingsKey, value);
@@ -39,8 +39,8 @@ namespace GV.AspNet.Configuration.Contrib.Octopus.UnitTests
 			}
 
 			[Theory]
-			[InlineData("Parent.Key", "", "AppSettings:Parent.Key", "Value")]
-			[InlineData("Parent.Key", ".", "AppSettings:Parent:Key", "Value")]
+			[InlineData("Parent.Key", "", "Parent.Key", "Value")]
+			[InlineData("Parent.Key", ".", "Parent:Key", "Value")]
 			public void ReplacesKeyDelimiter(string appSettingsKey, string appSettingsKeyDelimiter, string configurationKey, string value)
 			{
 				VariableDictionary.Set(appSettingsKey, value);
@@ -54,7 +54,7 @@ namespace GV.AspNet.Configuration.Contrib.Octopus.UnitTests
 			}
 
 			[Theory]
-			[InlineData("ParentKey", "", "Parent", "AppSettings:Parent:Key", "Value")]
+			[InlineData("ParentKey", "", "Parent", "Parent:Key", "Value")]
 			public void ReplacesSectionPrefix(string appSettingsKey, string appSettingsKeyDelimiter, string appSettingsSectionPrefix, string configurationKey, string value)
 			{
 				VariableDictionary.Set(appSettingsKey, value);
