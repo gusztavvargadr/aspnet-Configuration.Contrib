@@ -6,7 +6,6 @@ namespace GV.AspNet.Configuration.Contrib.Octopus
 {
 	public class OctopusConfigurationProvider : ConfigurationProvider
 	{
-		private const string ConfigurationKeyPrefix = "AppSettings";
 		private static readonly string ConfigurationKeyDelimiter = Constants.KeyDelimiter;
 
 		public OctopusConfigurationProvider(
@@ -66,7 +65,7 @@ namespace GV.AspNet.Configuration.Contrib.Octopus
 				break;
 			}
 
-			configurationKey = string.Concat(ConfigurationKeyPrefix, ConfigurationKeyDelimiter, configurationKey.Trim());
+			configurationKey = configurationKey.Trim();
 			return configurationKey;
 		}
 	}
