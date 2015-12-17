@@ -55,8 +55,8 @@ namespace GV.AspNet.Configuration.Contrib.Octopus.Samples.Host
 
 		private static void PrintTypedSettings(IConfiguration configuration)
 		{
-			var appSettings = configuration.Get<AppSettings>("AppSettings");
-			Console.WriteLine(appSettings);
+			var variables = configuration.Get<Variables>();
+			Console.WriteLine(variables);
 		}
 	}
 }

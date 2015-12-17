@@ -33,12 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GV.AspNet.Configuration.ConfigurationManager.Core, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Extensions.Configuration.Contrib.GV.ConfigurationManager.0.2.0-rc1-final\lib\net451\GV.AspNet.Configuration.ConfigurationManager.Core.dll</HintPath>
+    <Reference Include="GV.AspNet.Configuration.Contrib.ConfigurationManager, Version=0.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GV.AspNet.Configuration.Contrib.ConfigurationManager.0.3.1-rc1-final\lib\net451\GV.AspNet.Configuration.Contrib.ConfigurationManager.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GV.AspNet.Configuration.Contrib.Octopus, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GV.AspNet.Configuration.Contrib.Octopus.0.3.0-rc1-final\lib\net451\GV.AspNet.Configuration.Contrib.Octopus.dll</HintPath>
+    <Reference Include="GV.AspNet.Configuration.Contrib.Octopus, Version=0.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GV.AspNet.Configuration.Contrib.Octopus.0.3.1-rc1-final\lib\net451\GV.AspNet.Configuration.Contrib.Octopus.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MarkdownSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -90,7 +90,7 @@
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="AppSettings.cs" />
+    <Compile Include="Variables.cs" />
     <Compile Include="DatabaseSettings.cs" />
     <Compile Include="OctopusSettings.cs" />
     <Compile Include="Program.cs" />
