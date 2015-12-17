@@ -16,8 +16,10 @@ namespace GV.AspNet.Configuration.Contrib.ConfigurationManager.Samples.Host
 		private static IConfiguration GetDefaultConfiguration()
 		{
 			var configurationBuilder = new ConfigurationBuilder();
+
 			configurationBuilder.AddAppSettings(".", "Parent3");
 			configurationBuilder.AddConnectionStrings();
+
 			var configuration = configurationBuilder.Build();
 			return configuration;
 		}
@@ -25,11 +27,13 @@ namespace GV.AspNet.Configuration.Contrib.ConfigurationManager.Samples.Host
 		private static IConfiguration GetExeConfiguration()
 		{
 			var configurationBuilder = new ConfigurationBuilder();
+
 			var exeConfiguration =
 				System.Configuration.ConfigurationManager.OpenExeConfiguration(
 					Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GV.AspNet.Configuration.Contrib.ConfigurationManager.Samples.Host.exe"));
 			configurationBuilder.AddAppSettings(exeConfiguration, ".", "Parent3");
 			configurationBuilder.AddConnectionStrings(exeConfiguration);
+
 			var configuration = configurationBuilder.Build();
 			return configuration;
 		}

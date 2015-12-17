@@ -7,6 +7,6 @@ namespace GV.AspNet.Configuration.Contrib.ConfigurationManager.Samples.Host
 		public TimeSpan TimesOutIn { get; set; }
 		public int RetryCount { get; set; }
 
-		public override string ToString() => $"TimesoutIn: {TimesOutIn}; RetryCount: {RetryCount}";
+		public override string ToString() => $"TimesOutIn: {TimesOutIn}; RetryCount: {RetryCount}";
 	}
 }
