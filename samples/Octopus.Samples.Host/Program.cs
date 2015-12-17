@@ -26,7 +26,7 @@ namespace GV.AspNet.Configuration.Contrib.Octopus.Samples.Host
 			configurationBuilder.AddAppSettings();
 			var configuration = configurationBuilder.Build();
 
-			var octopusOptions = configuration.Get<OctopusConfigurationProviderOptions>("AppSettings:OctopusVariables");
+			var octopusOptions = configuration.Get<OctopusConfigurationProviderOptions>("AppSettings:Octopus");
 			return octopusOptions;
 		}
 
