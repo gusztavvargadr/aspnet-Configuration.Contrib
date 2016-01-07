@@ -4,7 +4,7 @@
 
 This repository contains the sources of custom providers for the [ASP.NET 5][AspNet5] [configuration system][AspNet5Configuration], supporting loading settings from [Octopus Deploy][Octopus] [variables][OctopusVariables] and the [classic XML configuration files][XML].
 
-Please see the [Wiki] for more information.
+Please see [this post][Post] for a quick introduction of ASP.NET 5 configuration and [the Wiki][Wiki] for more information about the custom providers.
 
 [CIProject]: https://ci.appveyor.com/project/gusztavvargadr/aspnet-configuration-contrib
 [CIBadge]: https://img.shields.io/appveyor/ci/gusztavvargadr/aspnet-configuration-contrib.svg
@@ -19,4 +19,5 @@ Please see the [Wiki] for more information.
 [OctopusVariables]: http://docs.octopusdeploy.com/display/OD/Variables
 [XML]: https://msdn.microsoft.com/en-us/library/1xtk877y(v=vs.110).aspx
 
+[Post]: http://bit.ly/1OBMjl0
 [Wiki]: ../../wiki
